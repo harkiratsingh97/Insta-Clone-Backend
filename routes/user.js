@@ -20,5 +20,13 @@ router.get(
 	UserController.getUserWithPosts
 );
 
+router.get(
+	"/get-user",
+	passport.authenticate("jwt", { session: false }),
+	(req, res) => {
+		return res.json({ data: req.user });
+	}
+);
+
 // API endpoint for Sign-in
 module.exports = router;

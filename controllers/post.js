@@ -23,7 +23,7 @@ module.exports.addPost = async (req, res) => {
 module.exports.getAllPosts = async (req, res) => {
 	try {
 		const posts = await Post.find().populate({
-			path: "author	",
+			path: "author",
 			select: "username",
 		});
 		if (posts) {

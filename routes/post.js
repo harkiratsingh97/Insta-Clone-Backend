@@ -14,9 +14,11 @@ router.post(
 // API endpoint to get all posts
 router.get(
 	"/get-posts",
-	// passport.authenticate("jwt", { session: false }),
+	passport.authenticate("jwt", { session: false }),
 	PostController.getAllPosts
 );
+
+
 
 //API endpoint to get all posts of a user
 // router.get(
